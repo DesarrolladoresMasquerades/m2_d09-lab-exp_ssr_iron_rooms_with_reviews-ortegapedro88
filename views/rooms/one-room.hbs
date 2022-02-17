@@ -1,0 +1,59 @@
+<div class='container'>
+	<div class='row columns'>
+		<div class='card column'>
+			<header class='card-header'>
+        <h2 class='card-header-title is-3'>Room Details
+      </header>
+			<div class='card-content'>
+        <img class='room-img' src='{{room.imageUrl}}' alt='{{room.name}}' />
+      </div>
+			<footer class='card-footer'>
+        <div class='section'>
+          <div class='block'>
+            <h2 class='title is-2'>Name: {{room.name}}</h2>
+          </div>
+          <div class='block'>
+            <p class='title is-4'>Description: {{room.description}}</p>
+          </div>
+          <div class='block'>
+            <h4 class='title is-4'>Owner: {{room.owner.username}}</h4>
+          </div>
+        </div>
+      </footer>
+		</div>
+
+		<div class='card column'>
+			<header class='card-header'>
+				<h2 class='card-header-title is-3'>Want to leave a comment?
+				</h2>
+			</header>
+			<div class='card-content'>
+				<form action='/rooms/{{room._id}}' method='POST' class='has-text-centered'>
+					<textarea class='textarea' rows='15' type='text' name='comment'></textarea>
+					<button class='button is-dark' type='submit' style='margin-top: 25px'>Send comment</button>
+				</form>
+			</div>
+			<div class='card-footer'></div>
+		</div>
+	</div>
+</div>
+
+{{#if room.reviews}}
+	<div class='section'>
+		<h1 class='title is-3'>List of reviews</h1>
+		{{#each room.reviews}}
+      <div class='column is-6'>
+        <article class='message'>
+          <div class='message-header'>
+            <p>Author: {{this.user.username}}</p>
+          </div>
+          <div class='message-body'>
+            {{this.comment}}
+          </div>
+        </article>
+      </div>
+
+		{{/each}}
+
+	</div>
+{{/if}}

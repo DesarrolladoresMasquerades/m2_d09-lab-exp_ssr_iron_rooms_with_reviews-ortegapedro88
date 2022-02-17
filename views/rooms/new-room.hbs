@@ -1,0 +1,67 @@
+<div class='container has-text-centered'>
+	<h1 class='title is-1'>Create a room</h1>
+</div>
+
+<div class='section is-centered'>
+	<form
+		action='/private/rooms/add'
+		method='POST'
+		enctype='multipart/form-data'
+		class='column is-4 is-centered has-text-centered'
+		style='margin: auto'
+	>
+
+		<div class='field'>
+			<label class='label'>Name:</label>
+
+			<div class='control'>
+				<input class='input' type='text' name='name' required />
+			</div>
+
+		</div>
+
+		<div class='field'>
+			<label class='label'>Description:</label>
+
+			<div class='control'>
+				<input class='input' type='email' name='description' required />
+			</div>
+		</div>
+
+		{{! <div class='field'>
+			<label class='label'>Image:</label>
+
+			<div class='control'>
+				<input class='input' type='file' name='imageUrl' required />
+			</div>
+
+		</div> }}
+
+		<div
+			class='file is-centered is-boxed is-success has-name'
+			style='margin: 25px 0'
+		>
+			<label class='file-label'>
+				<input class='file-input' type='file' name='imageUrl' />
+				<span class='file-cta'>
+					<span class='file-icon'>
+						<i class='fas fa-upload'></i>
+					</span>
+					<span class='file-label'>
+						Choose an image
+					</span>
+				</span>
+				<span class='file-name'>
+					Image must be 16x9 resolution
+				</span>
+			</label>
+		</div>
+
+		<button class='button is-rounded is-danger' type='submit'>Create</button>
+	</form>
+
+</div>
+
+{{#if errorMessage}}
+	<p>{{errorMessage}}</p>
+{{/if}}

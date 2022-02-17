@@ -1,0 +1,43 @@
+<div class='container has-text-centered'>
+	<h1 class='title is-1'>List of all rooms</h1>
+</div>
+
+<div class='container'>
+	<div class='section'>
+		<div class='row columns is-multiline'>
+
+			{{#each rooms}}
+
+				<div class='column is-4'>
+					<div class='card is-4'>
+						<div class='card-image'>
+							<figure class='image is-16by9'>
+								<img src='{{imageUrl}}' alt='Placeholder image' />
+							</figure>
+						</div>
+						<div class='card-content'>
+							<div class='media'>
+
+								<div class='media-content'>
+									<p class='title is-4'>{{name}}</p>
+									<p class='subtitle is-6'>Owned by: {{owner.username}}</p>
+								</div>
+							</div>
+
+							<div class='content'>
+								{{description}}
+
+								<span class='title is-6'>
+
+									<a href='/rooms/{{_id}}'> See more </a>
+
+								</span>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			{{/each}}
+		</div>
+	</div>
+</div>
