@@ -1,0 +1,29 @@
+<h1>Edit a Room</h1>
+
+<form action="/auth/rooms/my-rooms/{{this._id}}" method="POST">
+
+   <label> Name
+      <input type="text" name="name" value="{{this.name}}">
+   </label>
+   <label> Description
+     <textarea name="description" id="" cols="30" rows="10">{{this.description}}</textarea>
+   </label>
+
+   <label> Picture
+      <input type="text" name="imageUrl"  value="{{this.imageUrl}}">
+   </label>
+
+   <button type="submit"> EDIT </button>
+   <br>
+   <br>
+</form>
+
+   <a href="/auth/rooms/my-rooms/delete/{{this._id}}"><button>DELETE ROOM</button></a>
+
+{{#if errorMessage}}
+   {{errorMessage}}
+{{/if}}
+
+
+</form>
+

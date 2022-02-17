@@ -1,0 +1,15 @@
+<div>
+
+{{#each rooms}}
+
+<h1>Room: {{this.name}}</h1>
+<h3>Description: {{this.description}}</h3>
+<img src="{{this.imageUrl}}" alt="room picture">
+<h4>Owner: {{this.owner.fullName}}</h4>
+
+
+<a href="/auth/rooms/new-review/{{this._id}}"><button>Make a review</button></a>
+
+{{/each}}
+
+</div>
