@@ -1,0 +1,13 @@
+<div>
+
+{{#each roomsArr}}
+
+<h1>Room: {{this.name}}</h1>
+<h3>Description: {{this.description}}</h3>
+<img src="{{this.imageUrl}}" alt="room picture">
+
+
+<a href="/auth/rooms/my-rooms/{{this._id}}"><button>EDIT ROOM</button></a>
+{{/each}}
+
+</div>
